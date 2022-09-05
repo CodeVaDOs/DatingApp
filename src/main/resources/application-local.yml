@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    password:
+    url: jdbc:h2:mem:local
+    username: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+  config:
+    activate:
+      on-profile: local
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+
+
+jwt:
+  secret: tMAejMsTyxJ7UhYSH/inrqI4d8GJ9TFvNOyqBBOPjKM=
+  secretRefresh: saAC6ntpkXebd5fiWc5dGxdQ4Wj5HpmGBGdKeR3dxPE=
+  secretPasswordReset: 65I2Z63SwCft6K3k2MT1k/n2BZCoYOojXu/f3UqhHxI=
+  secretPasswordUpdate: Cwe4iwQa0G2u8Y6Wn37MMBxPJK2lxySrKWYORUpFIvw=
+  expiration: 7200
+  expirationRefresh: 604800
+  expirationPasswordReset: 86400
+  expirationPasswordUpdate: 3600
+  header: Authorization
+
+url:
+  server: http://localhost:8080
+  client: http://localhost:3000
+
+cloudinary:
+  cloudName: dtpc0u9df
+  apiKey: 655195143842919
+  apiSecret: ylUvwt1553Lx1FdWnnIKWAl5rE8
+
+clientChangePasswordPath: changePassword
+serverChangePasswordPath: api/v1/auth/resetPassword
